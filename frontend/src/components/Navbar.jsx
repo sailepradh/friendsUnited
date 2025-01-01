@@ -4,7 +4,7 @@ import { LuSun } from "react-icons/lu";
 import CreateUserModal from "./CreateUserModal";
 
 
-const Navbar = () => {
+const Navbar = ({ setUsers }) => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <Container maxW={"900px"}>
@@ -24,10 +24,10 @@ const Navbar = () => {
                     </Flex>
                     {/* Right side*/}
                     <Flex gap={3} alignItems={"center"}>
-                        <Text fontSize={"lg"} fontWeight={500} display={{ base: "none", md: "block" }}> BFFship 🔥 </Text>
+                        <Text fontSize={"lg"} fontWeight={500} display={{ base: "none", md: "block" }}> players 🔥 </Text>
                         <Button onClick={toggleColorMode}>{colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
                         </Button>
-                        <CreateUserModal>
+                        <CreateUserModal setUsers={setUsers}>
                         </CreateUserModal>
                     </Flex>
                 </Flex>
